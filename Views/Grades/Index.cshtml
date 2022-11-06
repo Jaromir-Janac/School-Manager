@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Grade>
+@foreach (var grade in Model) {
+    <div class="border border-1 border-dark">
+        <p>@grade.Student.FirstName @grade.Student.LastName</p>
+        <p>@grade.Subject.Name @grade.What @grade.Mark </p>
+        <p>@grade.Date.ToShortDateString()</p>
+        <a class="btn btn-warning" asp-action="Edit" asp-route-id=@grade.Id>Edit</a>
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id=@grade.Id>Delete</a>
+    </div>
+}
+    <div>
+        <a class="btn btn-success" asp-action="Create">Create</a>
+    </div>
